@@ -1,41 +1,14 @@
-* {
-    box-sizing: border-box;
+body, html {
+    height: 100%;
+    margin: 0;
 }
 
-html,body{
-    margin: 0px;
-}
+.bg { 
+    background-image: url("profileimage.jpg");
 
+    height: 100%; 
 
-.column {
-    background-color: grey;
-    width: 25%;
-    float: left;
-    padding-top: 20px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.poster {
-    width: 40%;
-    height: 100vh;
-}
-
-.avatar {
-    border-radius: 0%;
-    height: 50vh;
-    margin: auto;
-}
-
-
-@media screen and (max-width: 992px) {
-    .column {
-        width: 50%;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-    }
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
