@@ -3,6 +3,7 @@ var app = express();
 var route = express.Router();
 
 app.use('/', route);
+app.use(express.static(__dirname + '/views'));
 
 app.listen(3000, function(){
     console.log("Listening to port : 3000");

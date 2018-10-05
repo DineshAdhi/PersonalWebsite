@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+html,body{
+    margin: 0px;
+}
+
+
+.column {
+    background-color: grey;
+    width: 25%;
+    float: left;
+    padding-top: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.poster {
+    width: 40%;
+    height: 100vh;
+}
+
+.avatar {
+    border-radius: 0%;
+    height: 50vh;
+    margin: auto;
+}
+
+
+@media screen and (max-width: 992px) {
+    .column {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
