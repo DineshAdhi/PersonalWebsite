@@ -64,7 +64,7 @@ body{
     }
 
     .descriptionbox {
-        background-color: #ffd700;
+        background-color: rgba(255, 215, 0, 0.85);
         margin-right: 12vw;
         margin-left: 2vw;
         margin-top: 15vw;
