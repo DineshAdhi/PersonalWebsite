@@ -1,14 +1,58 @@
-body, html {
-    height: 100%;
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+body{
+    background-color: black;
+    background-image: url(profileimage.jpg);
+    background-repeat: no-repeat;
     margin: 0;
 }
 
-.bg { 
-    background-image: url("profileimage.jpg");
+.container {
+    float: right;
+    height: 100vh;
+    width: 50%;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.0);
+}
 
-    height: 100%; 
+.namebox {
+    background-color: #ffd700;
+    margin-top: 30%;
+    margin-left: 10vw;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    display: inline;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .container{
+        width: 100%;
+        float: left;
+        height: 100vh;
+    }
+    body {
+        background-size: cover;
+        background-position: center;
+        background-position-x: 42%;
+    }
+
+    .namebox{
+        width: auto;
+        margin-left: 17vw;
+    }
+
+    .name {
+        font-size : 22px;
+    }
 }
