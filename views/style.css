@@ -28,8 +28,25 @@ body{
 
 .name {
     font-family: 'Poppins', sans-serif;
-    font-size: 17px;
+    font-size: 20px;
     display: inline;
+}
+
+.descriptionbox {
+    background-color: #ffd700;
+    display: inline-block;
+    margin-top: 8%;
+    margin-right: 40%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.description {
+    display: inline;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
 }
 
 
@@ -46,9 +63,24 @@ body{
         background-position-x: 42%;
     }
 
+    .descriptionbox {
+        background-color: #ffd700;
+        margin-right: 12vw;
+        margin-left: 2vw;
+        margin-top: 15vw;
+        padding-right: 8vw;
+        padding-left: 8vw;
+    }
+
+    .description {
+        font-size: 5vw;
+        font-weight: bold;
+    }
+    
+
     .namebox{
         width: auto;
-        margin-left: 20vw;
+        margin-left: 10vw;
         margin-top:15vh;
     }
 
