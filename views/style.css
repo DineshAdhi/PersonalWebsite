@@ -8,6 +8,14 @@ body{
     margin: 0;
 }
 
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 .container {
     float: right;
     height: 100vh;
@@ -49,9 +57,26 @@ body{
     font-size: 20px;
 }
 
+.icon {
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 20px;
+    opacity: 0.90;
+}
+
+.icon:hover {
+    opacity: 1;
+}
+
+.iconcontainer {
+    margin-top: 100px;
+}
 
 
-@media screen and (max-width: 500px) {
+
+@media screen and (max-width: 800px) {
     .container{
         width: 100%;
         float: left;
@@ -87,5 +112,14 @@ body{
 
     .name {
         font-size : 5vw;
+    }
+
+    .iconcontainer {
+        margin-top: 7vh;
+    }
+
+    .icon {
+        height: 7vh;
+        margin: 1vh;
     }
 }
