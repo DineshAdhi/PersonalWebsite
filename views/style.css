@@ -5,6 +5,7 @@ body{
     background-color: black;
     background-image: url(profileimage.jpg);
     background-repeat: no-repeat;
+    background-size: contain;
     margin: 0;
 }
 
