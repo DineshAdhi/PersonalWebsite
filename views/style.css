@@ -65,10 +65,16 @@ a {
     margin-left: 0px;
     margin-right: 20px;
     opacity: 0.90;
+    transition: transform .3s;
 }
 
 .icon:hover {
     opacity: 1;
+    transform: scale(1.3)
+}
+
+.svgcontainer:hover {
+    padding: 0px;
 }
 
 .iconcontainer {
