@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+.blogcontainer {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    clear: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.postcontainer {
+    width: 100vw;
+    background: black;
+    flex: 1;
+}
+
+.topicnamecontainer {
+    padding: 10px;
+    margin-left: 2.5vw;
+    margin-top: 1.0vw;
+}
+
+.topicname {
+    color: #ffd700;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.3vw;
+    display: inline;
+}

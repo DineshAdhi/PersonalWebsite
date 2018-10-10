@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
+
 body{
     background-color: black;
     margin: 0;
@@ -15,25 +16,18 @@ a {
 }
 
 .backgroundcontainer {
-    background-image: url(profileimage.jpg);
+    background-image: url(/images/profileimage.jpg);
     background-repeat: no-repeat;
     background-size: contain;
     height: 100vh;
     width: 100vw;
 }
 
-.container {
+.indexcontainer {
     float: right;
     height: 100vh;
     width: 50%;
     margin: 0;
-}
-
-.gitcontainer {
-    height: 100vh;
-    background-color: white;
-    float: right;
-    clear: right;
 }
 
 .namebox {
@@ -95,7 +89,7 @@ a {
 
 
 @media screen and (max-width: 800px) {
-    .container{
+    .indexcontainer{
         width: 100%;
         float: left;
         height: 100vh;
