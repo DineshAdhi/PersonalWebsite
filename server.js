@@ -6,7 +6,7 @@ var port = process.env.PORT || 5000;
 
 app.use('/', route);
 app.use(express.static(__dirname + '/views'));
-app.use(favicon(__dirname + '/views/favicon.ico'));
+app.use(favicon(path.join(__dirname, 'views', 'favicon.ico')))
 
 app.listen(port, function(){
     console.log("Listening to port : " + port);
