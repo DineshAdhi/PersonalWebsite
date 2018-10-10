@@ -99,6 +99,7 @@ a {
         width: 100%;
         float: left;
         height: 100vh;
+        align-content: center;
         background-color: null;
     }
 
