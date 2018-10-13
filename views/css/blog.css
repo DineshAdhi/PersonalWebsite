@@ -1,29 +1,40 @@
 @import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
 
-.blogcontainer {
+ul {
+    padding: 10px;
+}
+
+.pagecontainer {
     height: 100vh;
     width: 100vw;
     background-color: black;
     clear: right;
     display: flex;
     flex-direction: column;
+    padding-left: 2.5vw;
 }
 
-.postcontainer {
+.contentcontainer {
     width: 100vw;
     background: black;
     flex: 1;
-}
-
-.topicnamecontainer {
-    padding: 10px;
-    margin-left: 2.5vw;
-    margin-top: 1.0vw;
 }
 
 .topicname {
     color: #ffd700;
     font-family: 'Anton', sans-serif;
     letter-spacing: 0.3vw;
-    display: inline;
+}
+
+@media screen and (max-width: 800px) {
+
+    .topicname {
+        text-align: center;
+    }
+
+    .pagecontainer {
+        padding-left: 0px;
+    }
+
 }
