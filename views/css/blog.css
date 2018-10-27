@@ -35,6 +35,7 @@
     align-items: center;
     height: 9vh;
     transition: transform 0.3s;
+    box-shadow: 5px 5px 10px black;
 }
 
 .posttitle {
@@ -63,6 +64,11 @@
     .postbox {
         padding: 4vw;
         margin: 1vw;
+    }
+
+    .posttitle {
+        margin-left: 4vw;
+        margin-right: 4vw;
     }
 
 
