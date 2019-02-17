@@ -75,5 +75,6 @@
     .pagecontainer {
         padding-left: 0px;
         flex-direction: column;
+        height: 100%;
     }
 }
