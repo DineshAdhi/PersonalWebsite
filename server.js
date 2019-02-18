@@ -5,6 +5,22 @@ var exphbs  = require('express-handlebars');
 var path = require('path');
 var port = process.env.PORT || 5000;
 
+var json = { 
+    "appleway1" : "https://dineshthoughts.wordpress.com/2019/02/07/the-apple-way-1/",
+    "thoughtscience1" : "https://dineshthoughts.wordpress.com/2018/11/26/thought-science-1/",
+    "thoughtscience2" : "https://dineshthoughts.wordpress.com/2018/11/27/thought-science-2/",
+    "thoughtscience3" : "https://dineshthoughts.wordpress.com/2018/12/04/thought-science-3/",
+    "relationships" : "https://medium.com/@dinesh10c04/what-is-wrong-with-the-idea-of-relationship-b3b2ee96d0a8",
+    "losingthekey" : "https://dineshthoughts.wordpress.com/2019/02/17/losing-the-key/",
+    "minutetomidnight" : "https://dineshthoughts.wordpress.com/2018/09/03/a-minute-to-midnight/",
+    "tonystark" : "https://dineshthoughts.wordpress.com/2018/06/04/tony-stark-the-marvel-avenger/",
+    "theoryofeverything" : "https://dineshthoughts.wordpress.com/2018/05/07/the-theory-of-everything/",
+    "beingignorant" : "https://dineshthoughts.wordpress.com/2017/08/28/the-art-of-being-an-ignorant/",
+    "divinevsdosa" : "https://dineshthoughts.wordpress.com/2017/08/15/divine-vs-dhosa/",
+    "tenmonthslater": "https://medium.com/@dinesh10c04/10-months-later-ea158bf7d818",
+    "gameofcolor" : "https://medium.com/@dinesh10c04/the-game-of-colour-6c4700aeb3a8"
+}
+
 app.engine('handlebars', exphbs({defaultLayout: 'index'}));
 app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/views'));
@@ -16,4 +32,16 @@ app.listen(port, function(){
 
 app.get("/", function(req, res){
     res.render('home', {'dinesh': 'adhithya'});
+});
+
+app.get("/posts", function(req, res){
+   var id = req.query.id;
+    
+    if(json[id] == null)
+    {
+        res.send("Invalid post id");
+        return;
+    }
+    
+    res.redirect(json[id]);
 });
