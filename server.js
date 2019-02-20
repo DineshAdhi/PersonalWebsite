@@ -31,7 +31,7 @@ app.listen(port, function(){
 });
 
 app.get("/", function(req, res){
-    res.render('home', {'dinesh': 'adhithya'});
+    res.render('home', json);
 });
 
 app.get("/posts", function(req, res){
