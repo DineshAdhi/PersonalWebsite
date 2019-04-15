@@ -18,7 +18,8 @@ var json = {
     "beingignorant" : "https://dineshthoughts.wordpress.com/2017/08/28/the-art-of-being-an-ignorant/",
     "divinevsdosa" : "https://dineshthoughts.wordpress.com/2017/08/15/divine-vs-dhosa/",
     "tenmonthslater": "https://medium.com/@dinesh10c04/10-months-later-ea158bf7d818",
-    "gameofcolor" : "https://medium.com/@dinesh10c04/the-game-of-colour-6c4700aeb3a8"
+    "gameofcolor" : "https://medium.com/@dinesh10c04/the-game-of-colour-6c4700aeb3a8",
+    "tomatoterrorist" : "https://dineshthoughts.wordpress.com/2019/04/15/the-tomato-terrorist-the-lok-sabha/"
 }
 
 app.engine('handlebars', exphbs({defaultLayout: 'index'}));
