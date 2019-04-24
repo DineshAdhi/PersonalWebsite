@@ -16,7 +16,7 @@ a {
 }
 
 .backgroundcontainer {
-    background-image: url(/images/profileimage.jpg);
+    /* background-image: url(/images/profileimage.jpg); */
     background-repeat: no-repeat;
     background-size: contain;
     height: 100vh;
