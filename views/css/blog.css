@@ -31,19 +31,36 @@
 
 .post {
     background: black;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    height: 9vh;
+    height: 8vh;
     transition: transform 0.3s;
     box-shadow: 5px 5px 10px black;
 }
 
 .posttitle {
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Poppins', sans-serif;
     margin-left: 2vw;
-    margin-right: 2vw;
+    margin-right: 1.2vw;
     color: #ffd700;
+}
+
+.countertext{
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif; 
+    background: #ffd700;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    color: #000000;
+    margin-right: 2vw;
+}
+
+.eyefavicon{
+    background: #ffd700;
+    padding: 6px;
 }
 
 .post:hover {
@@ -51,8 +68,12 @@
     transform: scale(1.05);
 }
 
-.post:hover .posttitle {
+.post:hover .posttitle  {
     color: black;
+}
+
+.post:hover .countertext  {
+    color: #000000;
 }
 
 @media screen and (max-width: 800px) {

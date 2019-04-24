@@ -1,4 +1,4 @@
-<div class="backgroundcontainer" style="background-image:url({{profileimage}})">
+    <div class="backgroundcontainer" style="background-image:url({{profileimage}})">
     <div class="indexcontainer">
         <ul>
             <li>
@@ -9,7 +9,8 @@
             <li>
                 <div class="descriptionbox">
                     <h3 class="description">A Programming enthusiast who loves to learn, build and tinker with
-                       computers. Extreme opinions. Irrepressibly curious. Fascinates writing.</h3>
+                       computers. Extreme opinions. Irrepressibly curious. Fascinates writing.                  
+                    </h3>
                 </div>
             </li>
         </ul>
@@ -38,117 +39,19 @@
        <h2 class="topicname">BLOG POSTS</h2>
         <div class="postcontainer">
 
-            <a target="_blank" href="/posts?id=tomatoterrorist">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> The Tomato Terrorist & The Lok Sabha </h3>
-                    </div>
-                </div>
-            </a>
+            {{#each posts}}
 
-            <a target="_blank" href="/posts?id=seeingtheunseeable">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> Seeing the Unseesable </h3>
+                <a target="_blank" href="/posts?id={{id}}">
+                    <div class="postbox">
+                        <div class="post">
+                            <text class="posttitle"> {{title}} </text>
+                            <img class="eyefavicon" src = "/icons/eyefavicon.ico"/> 
+                            <text class="countertext" name="{{id}}"> {{views}} Views </text>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+                
+            {{/each}}
 
-            <a target="_blank" href="/posts?id=gameofcolor">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> Game of color </h3>
-                    </div>
-                </div>
-            </a>
-
-            <a target="_blank" href="/posts?id=tenmonthslater">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> Ten months later </h3>
-                    </div>
-                </div>
-            </a>
-            
-            <a target="_blank" href="/posts?id=thoughtscience3">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> Thought Science - 3 </h3>
-                    </div>
-                </div>
-            </a>
-
-            <a target="_blank" href="/posts?id=thoughtscience2">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> Thought Science - 2 </h3>
-                    </div>
-                </div>
-            </a>
-
-
-            <a target="_blank" href="/posts?id=thoughtscience1">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> Thought Science - 1 </h3>
-                    </div>
-                </div>
-            </a>
-
-            <a target="_blank" href="/posts?id=relationships">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> Relationships </h3>
-                    </div>
-                </div>
-            </a>
-
-            <a target="_blank" href="/posts?id=losingthekey">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> Losing the key </h3>
-                    </div>
-                </div>
-            </a>
-
-            <a target="_blank" href="/posts?id=minutetomidnight">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> A Minute to Midnight </h3>
-                    </div>
-                </div>
-            </a>
-
-            <a target="_blank" href="/posts?id=tonystark">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> Tony Stark – The Marvel Avenger </h3>
-                    </div>
-                </div>
-            </a>
-
-            <a target="_blank" href="/posts?id=theoryofeverything">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> The Theory of Everything </h3>
-                    </div>
-                </div>
-            </a>
-
-            <a target="_blank" href="/posts?id=beingignorant">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> The Art of being ignorant </h3>
-                    </div>
-                </div>
-            </a>
-
-            <a target="_blank" href="/posts?id=divinevsdosa">
-                <div class="postbox">
-                    <div class="post">
-                        <text class="posttitle"> Divine VS Dhosa </h3>
-                    </div>
-                </div>
-            </a>
-        </div>
+        </div> 
 </div>

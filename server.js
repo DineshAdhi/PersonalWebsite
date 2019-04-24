@@ -3,30 +3,46 @@ var app = express();
 var favicon = require('serve-favicon');
 var exphbs  = require('express-handlebars');
 var path = require('path');
+var firebase = require('firebase');
 var port = process.env.PORT || 5000;
 var no_images = 3;
 
-var json = { 
-    "seeingtheunseeable" : "https://dineshthoughts.wordpress.com/2019/04/12/seeing-the-unseeable/",
-    "thoughtscience1" : "https://dineshthoughts.wordpress.com/2018/11/26/thought-science-1/",
-    "thoughtscience2" : "https://dineshthoughts.wordpress.com/2018/11/27/thought-science-2/",
-    "thoughtscience3" : "https://dineshthoughts.wordpress.com/2018/12/04/thought-science-3/",
-    "relationships" : "https://medium.com/@dinesh10c04/what-is-wrong-with-the-idea-of-relationship-b3b2ee96d0a8",
-    "losingthekey" : "https://dineshthoughts.wordpress.com/2019/02/17/losing-the-key/",
-    "minutetomidnight" : "https://dineshthoughts.wordpress.com/2018/09/03/a-minute-to-midnight/",
-    "tonystark" : "https://dineshthoughts.wordpress.com/2018/06/04/tony-stark-the-marvel-avenger/",
-    "theoryofeverything" : "https://dineshthoughts.wordpress.com/2018/05/07/the-theory-of-everything/",
-    "beingignorant" : "https://dineshthoughts.wordpress.com/2017/08/28/the-art-of-being-an-ignorant/",
-    "divinevsdosa" : "https://dineshthoughts.wordpress.com/2017/08/15/divine-vs-dhosa/",
-    "tenmonthslater": "https://medium.com/@dinesh10c04/10-months-later-ea158bf7d818",
-    "gameofcolor" : "https://medium.com/@dinesh10c04/the-game-of-colour-6c4700aeb3a8",
-    "tomatoterrorist" : "https://dineshthoughts.wordpress.com/2019/04/15/the-tomato-terrorist-the-lok-sabha/",
-    "profileimage" : "/images/profileimage.jpg"
-}
+var json = {};
+var posts = {};
+
+// Firebase Implementation
+
+var config = {
+    apiKey: "AIzaSyBSuDVH6kQfly11M6PC19HzMZIHS3_Ixpc",
+    authDomain: "personal-website-ea106.firebaseapp.com",
+    databaseURL: "https://personal-website-ea106.firebaseio.com",
+    projectId: "personal-website-ea106",
+    storageBucket: "personal-website-ea106.appspot.com",
+    messagingSenderId: "798911983888"
+};
+
+firebase.initializeApp(config);
+var db = firebase.firestore();
+var counter = db.collection('Posts');
+
+counter.orderBy('index', 'desc').get().then(snapshot =>{
+    snapshot.forEach((record)=>{
+        var id = record.id;
+        posts[id] = record.data();
+        posts[id]["id"] = id;
+    });
+});
+
+////////////////////////////////////////
 
 app.engine('handlebars', exphbs({defaultLayout: 'index'}));
 app.set('view engine', 'handlebars');
-app.use(express.static(__dirname + '/views'));
+app.use("/css", express.static(__dirname + '/views/css'));
+app.use("/icons", express.static(__dirname + '/views/icons'));
+app.use("/images", express.static(__dirname + '/views/images'));
+app.use("/js", express.static(__dirname + '/views/js'));
+app.use("/", express.static(__dirname));
+
 app.use(favicon(path.join(__dirname, 'views', 'icons', 'favicon.ico')))
 
 app.listen(port, function(){
@@ -35,18 +51,28 @@ app.listen(port, function(){
 
 app.get("/", function(req, res){
     var rand = Math.floor(Math.random() * (no_images - 1) + 1);
-    json['profileimage'] = "/images/profileimage" + rand + ".jpg";
-    res.render('home', json);
+    var profileimage = "/images/profileimage" + rand + ".jpg";
+    console.log(profileimage);
+    res.render('home', { profileimage : profileimage, posts : posts});
 });
 
 app.get("/posts", function(req, res){
    var id = req.query.id;
     
-    if(json[id] == null)
+    if(posts[id] == null)
     {
         res.send("Invalid post id");
         return;
     }
+
+    var url = posts[id]["url"];
+    var views = posts[id]["views"];
     
-    res.redirect(json[id]);
+    var doc = counter.doc(id);
+
+    db.batch().update(doc, {views: views + 1}).commit().then(()=>{
+        console.log("Commiited");
+    });
+
+    res.redirect(url);
 });
