@@ -16,7 +16,7 @@ var counter = db.collection('Posts');
 
 function trigger(id) {
     posts[id]["views"] += 1;
-    console.log(posts[id]["views"]);
+    //console.log(posts[id]["views"]);
 
     var views_id = id + "_views";
 
