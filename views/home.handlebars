@@ -8,7 +8,7 @@
             </li>
             <li>
                 <div class="descriptionbox">
-                    <h3 class="description">A Programming enthusiast who loves to learn, build and tinker with
+                    <h3 id="dummy" class="description">A Programming enthusiast who loves to learn, build and tinker with
                        computers. Extreme opinions. Irrepressibly curious. Fascinates writing.                  
                     </h3>
                 </div>
@@ -41,12 +41,12 @@
 
             {{#each posts}}
 
-                <a target="_blank" href="/posts?id={{id}}">
+                <a target="_blank" href="/posts?id={{id}}" onclick="trigger('{{id}}')">
                     <div class="postbox">
                         <div class="post">
-                            <text class="posttitle"> {{title}} </text>
+                            <text id={{id}}_title class="posttitle"> {{title}} </text>
                             <img class="eyefavicon" src = "/icons/eyefavicon.ico"/> 
-                            <text class="countertext" name="{{id}}"> {{views}} Views </text>
+                            <text id={{id}}_views class="countertext"> {{views}} Views </text>
                         </div>
                     </div>
                 </a>

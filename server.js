@@ -39,8 +39,8 @@ app.engine('handlebars', exphbs({defaultLayout: 'index'}));
 app.set('view engine', 'handlebars');
 app.use("/css", express.static(__dirname + '/views/css'));
 app.use("/icons", express.static(__dirname + '/views/icons'));
-app.use("/images", express.static(__dirname + '/views/images'));
 app.use("/js", express.static(__dirname + '/views/js'));
+app.use("/images", express.static(__dirname + '/views/images'));
 app.use("/", express.static(__dirname));
 
 app.use(favicon(path.join(__dirname, 'views', 'icons', 'favicon.ico')))
@@ -50,14 +50,22 @@ app.listen(port, function(){
 });
 
 app.get("/", function(req, res){
+
+    counter.orderBy('index', 'desc').get().then(snapshot =>{
+        snapshot.forEach((record)=>{
+            var id = record.id;
+            posts[id] = record.data();
+            posts[id]["id"] = id;
+        });
+    });
+
     var rand = Math.floor(Math.random() * (no_images - 1) + 1);
     var profileimage = "/images/profileimage" + rand + ".jpg";
-    console.log(profileimage);
     res.render('home', { profileimage : profileimage, posts : posts});
 });
 
 app.get("/posts", function(req, res){
-   var id = req.query.id;
+    var id = req.query.id;
     
     if(posts[id] == null)
     {
@@ -66,13 +74,5 @@ app.get("/posts", function(req, res){
     }
 
     var url = posts[id]["url"];
-    var views = posts[id]["views"];
-    
-    var doc = counter.doc(id);
-
-    db.batch().update(doc, {views: views + 1}).commit().then(()=>{
-        console.log("Commiited");
-    });
-
     res.redirect(url);
 });
