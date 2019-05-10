@@ -3,7 +3,8 @@ var app = express();
 var favicon = require('serve-favicon');
 var exphbs  = require('express-handlebars');
 var path = require('path');
-var firebase = require('firebase');
+var admin = require('firebase-admin');
+var serviceAccount = require("./serviceaccount.json")
 var port = process.env.PORT || 5000;
 var no_images = 3;
 
@@ -11,18 +12,11 @@ var json = {};
 var posts = {};
 
 // Firebase Implementation
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+});
 
-var config = {
-    apiKey: "AIzaSyBSuDVH6kQfly11M6PC19HzMZIHS3_Ixpc",
-    authDomain: "personal-website-ea106.firebaseapp.com",
-    databaseURL: "https://personal-website-ea106.firebaseio.com",
-    projectId: "personal-website-ea106",
-    storageBucket: "personal-website-ea106.appspot.com",
-    messagingSenderId: "798911983888"
-};
-
-firebase.initializeApp(config);
-var db = firebase.firestore();
+var db = admin.firestore();
 var counter = db.collection('Posts');
 
 counter.orderBy('index', 'desc').get().then(snapshot =>{
@@ -74,5 +68,7 @@ app.get("/posts", function(req, res){
     }
 
     var url = posts[id]["url"];
+    posts[id]["views"] += 1;
+    counter.doc(id).update({views : posts[id]["views"]});
     res.redirect(url);
 });
