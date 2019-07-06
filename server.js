@@ -53,7 +53,7 @@ app.get("/", function(req, res){
         });
     });
 
-    var profileimage = "/images/profileimage1.jpg";
+    var profileimage = "/images/profileimage.png";
     res.render('home', { profileimage : profileimage, posts : posts});
 });
 
