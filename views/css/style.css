@@ -19,15 +19,16 @@ a {
     /* background-image: url(/images/profileimage.jpg); */
     background-repeat: no-repeat;
     background-size: contain;
+    background-position-x: 100%;
     height: 100vh;
     width: 100vw;
 }
 
 .indexcontainer {
-    float: right;
+    float: left;
     height: 100vh;
     width: 50%;
-    margin: 0;
+    padding-left: 15vw;
 }
 
 .namebox {
@@ -94,10 +95,11 @@ a {
         float: left;
         height: 100vh;
         align-content: center;
-        background-color: null;
+        padding-left: 5vw;
     }
 
     .backgroundcontainer {
+        background-image: null;
         background-position: center right;
         background-size: cover;
         background-position-x: 42%;

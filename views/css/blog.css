@@ -83,7 +83,8 @@
     }
 
     .postbox {
-        padding: 4vw;
+        padding-left: 8vw;
+        padding-bottom: 4vh;
         margin: 1vw;
     }
 
