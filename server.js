@@ -53,8 +53,7 @@ app.get("/", function(req, res){
         });
     });
 
-    var rand = Math.floor(Math.random() * (no_images - 1) + 1);
-    var profileimage = "/images/profileimage" + rand + ".jpg";
+    var profileimage = "/images/profileimage1.jpg";
     res.render('home', { profileimage : profileimage, posts : posts});
 });
 
