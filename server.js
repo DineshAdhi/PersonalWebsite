@@ -50,6 +50,13 @@ app.get("/", function(req, res){
             var id = record.id;
             posts[id] = record.data();
             posts[id]["id"] = id;
+            posts[id]["hoverheight"] = posts[id]["index"] * 3;
+
+            if(posts[id]["series"] == true)
+            {
+                posts[id]["serieslength"] = (posts[id]["chapters"].length + 1) * 8 + "vh"
+                console.log(posts[id]);
+            }
         });
     });
 
@@ -59,14 +66,36 @@ app.get("/", function(req, res){
 
 app.get("/posts", function(req, res){
     var id = req.query.id;
-    
+    var series = req.query.series;
+    var chapterid = req.query.chapterid;
+    var url = "";
+
     if(posts[id] == null)
     {
         res.send("Invalid post id");
         return;
     }
 
-    var url = posts[id]["url"];
+    if(series == 'true')
+    {
+        var array = posts[id]["chapters"];
+
+        for(var i=0; i<array.length; i++)
+        {
+             var chapter = array[i];
+             
+             if(chapter["chapterid"] == chapterid)
+             {
+                 url = chapter["url"];
+                 break;
+             }
+        }
+    }
+    else 
+    {
+        url = posts[id]["url"];
+    }
+
     posts[id]["views"] += 1;
     counter.doc(id).update({views : posts[id]["views"]});
     res.redirect(url);

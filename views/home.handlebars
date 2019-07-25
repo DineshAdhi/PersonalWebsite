@@ -40,17 +40,36 @@
         <div class="postcontainer">
 
             {{#each posts}}
+                {{#if series}}
+                        <div class="postbox">
+                            <div class="post" onmouseover="this.style.height='{{{serieslength}}}'" onmouseout="this.style.height='8vh'">
 
-                <a target="_blank" href="/posts?id={{id}}" >
-                    <div class="postbox">
-                        <div class="post">
-                            <text id={{id}}_title class="posttitle"> {{title}} </text>
-                            <img class="eyefavicon" src = "/icons/eyefavicon.ico"/> 
-                            <text id={{id}}_views class="countertext"> {{views}} Views </text>
+                                    <div class="postcontent">
+                                        <text id={{id}}_title class="chaptertitle"> {{title}} </text>
+                                        <text id={{id}}_views class="countertext"> {{views}} Views </text>
+                                    </div>
+                                
+                                {{#each chapters}}
+                                    <a target="_blank" href="/posts?id={{../id}}&chapterid={{chapterid}}&series=true">
+                                        <div class="postcontent">
+                                            <text id={{id}}_title class="chaptertitle"> {{title}} </text>
+                                        </div>
+                                    </a>
+                                {{/each}}
+                            </div>
                         </div>
-                    </div>
-                </a>
-                
+                {{else}}
+                    <a target="_blank" href="/posts?id={{id}}">
+                        <div class="postbox">
+                            <div class="post">
+                                <div class="postcontent">
+                                    <text id={{id}}_title class="posttitle"> {{title}} 1 </text>
+                                    <text id={{id}}_views class="countertext"> {{views}} Views </text>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                {{/if}}
             {{/each}}
 
         </div> 

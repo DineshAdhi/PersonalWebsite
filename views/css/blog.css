@@ -27,18 +27,34 @@
     margin-top: 2vw;
     display: inline-block;
     padding: 0.5vw;
+    overflow: hidden;
 }
 
 .post {
     background: black;
-    display: inline-flex;
+    display: inline-block;
     align-items: center;
     height: 8vh;
-    transition: transform 0.3s;
+    transition: transform 0.3s, height 0.3s;
     box-shadow: 5px 5px 10px black;
+    overflow: hidden;
+}
+
+.postcontent {
+    height: 8vh;
+    display: flex;
+    align-items: center;
 }
 
 .posttitle {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 2vw;
+    margin-right: 1.2vw;
+    color: #ffd700;
+}
+
+.chaptertitle {
     font-size: 18px;
     font-family: 'Poppins', sans-serif;
     margin-left: 2vw;
@@ -64,7 +80,7 @@
 }
 
 .post:hover {
-    background: #ffd700;
+    /* background: #ffd700; */
     transform: scale(1.05);
 }
 
@@ -72,8 +88,12 @@
     color: black;
 }
 
-.post:hover .countertext  {
-    color: #000000;
+.postcontent:hover {
+    background: #ffd700;
+}
+
+.postcontent:hover .chaptertitle {
+    color: black;
 }
 
 @media screen and (max-width: 800px) {
