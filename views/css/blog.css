@@ -33,7 +33,6 @@
 .post {
     background: black;
     display: inline-block;
-    align-items: center;
     height: 8vh;
     transition: transform 0.3s, height 0.3s;
     box-shadow: 5px 5px 10px black;

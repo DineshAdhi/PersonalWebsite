@@ -54,8 +54,7 @@ app.get("/", function(req, res){
 
             if(posts[id]["series"] == true)
             {
-                posts[id]["serieslength"] = (posts[id]["chapters"].length + 1) * 8 + "vh"
-                console.log(posts[id]);
+                posts[id]["serieslength"] = (posts[id]["chapters"].length + 1) * 8 + "vh";
             }
         });
     });
