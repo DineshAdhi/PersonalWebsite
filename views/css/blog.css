@@ -82,6 +82,10 @@
     padding: 6px;
 }
 
+.post:hover #series {
+    border-left: 0;
+}
+
 .post:hover {
     /* background: #ffd700; */
     transform: scale(1.05);
