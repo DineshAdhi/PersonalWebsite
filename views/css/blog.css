@@ -4,9 +4,8 @@
 
 .pagecontainer {
     height: 100vh;
-    width: 100vw;
     background-color: #2B2B2B;
-    clear: right;
+    /* clear: right; */
     display: flex;
     flex-direction: column;
     padding-left: 2.5vw;
@@ -146,5 +145,5 @@
         padding-left: 0px;
         flex-direction: column;
         height: 100%;
-    }
+    } 
 }
