@@ -91,7 +91,7 @@ a {
 
 @media screen and (max-width: 800px) {
     .indexcontainer{
-        width: 90%;
+        width: 95%;
         float: left;
         height: 100vh;
         align-content: center;
