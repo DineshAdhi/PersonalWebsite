@@ -114,19 +114,15 @@
         margin: 1vw;
     }
     
-
     .post {
         width: 80vw;
-    }
-
-    .postbox {
-        width: 100vw;
     }
 
     .posttitle {
         margin-left: 4vw;
         margin-right: 4vw;
         font-size: 13px;
+        padding: 10px;
     }
 
     .chaptertitle {
@@ -134,7 +130,6 @@
         margin-right: 4vw;
         font-size: 13px;
     }
-
 
 
     .countertext{
@@ -145,5 +140,6 @@
         padding-left: 0px;
         flex-direction: column;
         height: 100%;
+        /* width: 100%; */
     } 
 }
